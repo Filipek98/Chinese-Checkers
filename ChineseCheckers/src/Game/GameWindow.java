@@ -1,4 +1,6 @@
-package Game;
+package src.Game;
+
+import src.Game.GameBoardPanel;
 
 import javax.swing.*;
 public class GameWindow extends JFrame

@@ -1,16 +1,16 @@
-package Game;
+package src.Game;
 
 import PartsOfGame.Pawn;
 
 import javax.swing.*;
 import java.awt.*;
 
-class FieldButton extends JButton{
+public class FieldButton extends JButton{
     private int x,y;
     private Pawn pawn;
     private Color defaultColor;
 
-    FieldButton(int x,int y){
+    public FieldButton(int x, int y){
         super();
         this.x=x;
         this.y=y;
@@ -28,8 +28,22 @@ class FieldButton extends JButton{
         return pawn;
     }
 
-    void setPawn(Pawn pawn){
+    public void setPawn(Pawn pawn){
         this.pawn=pawn;
+    }
+
+    void setDefaultColor(Color c){
+        this.defaultColor=c;
+    }
+    void colorPawn(ColorsOfField c){
+        if(this.pawn!=null){
+            this.setBackground(c.getPawnColor(pawn.getColor()));
+        }else{
+            this.setDefaultBackgroundColor();
+        }
+    }
+    void setDefaultBackgroundColor(){
+        this.setBackground(defaultColor);
     }
 
 }
